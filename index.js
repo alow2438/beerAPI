@@ -1,8 +1,12 @@
 const express = require("express")
 const app = express() //app is the tool use to 
+const beerRouter = require("./routes/beerRouter")
+const mongoose = require("mongoose")
+
+app.use("/beers", beerRouter)
 
 app.use("/", (req, res) => { //configure middleware to run
-    console.log("Something hit me!")
+    // console.log("Something hit me!")
     res.send(`<h1>Welcome to the beer API</h1>`)
 })
 
