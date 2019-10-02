@@ -50,7 +50,7 @@ beerRouter.delete("/:beer_id", (req, res) => {
 })
 
 beerRouter.put("/:beer_id", (req, res) => {
-    Beer.findById(re.params.beer_id, (err, beer) => {
+    Beer.findById(req.params.beer_id, (err, beer) => {
         if (err) {
             res.status(400).send(err)
         } else {
